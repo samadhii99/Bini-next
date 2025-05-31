@@ -13,6 +13,15 @@ const HomePage = () => {
  const [selectedCategory, setSelectedCategory] = useState("All Categories");
  const [openDropdown, setOpenDropdown] = useState<"location" | "area" | "category" | null>(null);
 
+ const [locationSearch, setLocationSearch] = useState('');
+ const [showLocationSearch, setShowLocationSearch] = useState(false);
+ // Add this locations array (you can expand this list)
+const locations = ['Bandarawela', 'Badulla', 'Balangoda'];
+
+// Filter locations based on search
+const filteredLocations = locations.filter(loc =>
+  loc.toLowerCase().includes(locationSearch.toLowerCase())
+);
 
   const categories = [
     { image: '/img/tec.png' },
@@ -30,6 +39,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-peach">
       {/* Header */}
+      <div className="fixed-header-container">
       <div className="page-container"></div>
       <header className="bg-red-500 text-white px-6 py-4 header-offset">
         <div className="max-w-7xl mx-2 flex items-center justify-between">
@@ -92,6 +102,7 @@ const HomePage = () => {
           </div>
         </div>
       </header>
+      </div>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-12">
@@ -129,34 +140,78 @@ const HomePage = () => {
             {/* Filter Options */}
             <div className="flex justify-center space-x-8 text-gray-700 mb-10 relative z-20">
   
-             {/* Location Filter */}
+{/* Location Filter */}
 <div className="relative">
-  <button
-     className={`filter-button ${openDropdown === 'location' ? 'active' : ''}`}
-    onClick={() =>setOpenDropdown(openDropdown === 'location' ? null : 'location')}
-  >
-    <img src="/img/weui_location-filled.png" alt="location" className="filter-icon" />
-    <span>{selectedLocation}</span>
-    <div className="filter-divider"></div>
-    <img src="/img/fe_arrow-down.png" alt="dropdown" className="filter-arrow" />
-  </button>
+  {!showLocationSearch ? (
+    <button
+      className={`filter-button ${openDropdown === 'location' ? 'active' : ''}`}
+      onClick={() => {
+        setShowLocationSearch(true);
+        setOpenDropdown('location');
+        setLocationSearch('');
+      }}
+    >
+      <img src="/img/weui_location-filled.png" alt="location" className="filter-icon" />
+      <span>{selectedLocation}</span>
+      <div className="filter-divider"></div>
+      <img src="/img/fe_arrow-down.png" alt="dropdown" className="filter-arrow" />
+    </button>
+  ) : (
+    <div className="filter-button active">
+      <img src="/img/weui_location-filled.png" alt="location" className="filter-icon" />
+      <input
+        type="text"
+        placeholder="Search location..."
+        value={locationSearch}
+        onChange={(e) => setLocationSearch(e.target.value)}
+        className="search-input"
+        autoFocus
+        onBlur={() => {
+          setTimeout(() => {
+            if (!locationSearch && selectedLocation === "Choose Location") {
+              setShowLocationSearch(false);
+              setOpenDropdown(null);
+            }
+          }, 200);
+        }}
+      />
+      <div className="filter-divider"></div>
+      <button
+        onClick={() => {
+          setShowLocationSearch(false);
+          setOpenDropdown(null);
+          setLocationSearch('');
+        }}
+        className="search-close-button"
+      >
+        <img src="/img/fe_arrow-down.png" alt="close" className="filter-arrow rotate-180" />
+      </button>
+    </div>
+  )}
 
-  {openDropdown === 'location' && (
+  {openDropdown === 'location' && showLocationSearch && (
     <div className="dropdown-menu">
-      {['Bandarawela', 'Badulla', 'Balangoda'].map((loc) => (
-  <div
-    key={loc}
-    className={`dropdown-item ${selectedLocation === loc ? 'dropdown-item-selected' : ''}`}
-    onClick={() => {
-      setSelectedLocation(loc);
-      setOpenDropdown(null);
-    }}
-  >
-    <img src="/img/location-drop.png" alt="icon" className="dropdown-icon" />
-    <span>{loc}</span>
-  </div>
-))}
-
+      {filteredLocations.length > 0 ? (
+        filteredLocations.map((loc) => (
+          <div
+            key={loc}
+            className={`dropdown-item ${selectedLocation === loc ? 'dropdown-item-selected' : ''}`}
+            onClick={() => {
+              setSelectedLocation(loc);
+              setOpenDropdown(null);
+              setShowLocationSearch(false);
+              setLocationSearch('');
+            }}
+          >
+            <img src="/img/location-drop.png" alt="icon" className="dropdown-icon" />
+            <span>{loc}</span>
+          </div>
+        ))
+      ) : (
+        <div className="dropdown-item text-gray-500">
+          No locations found
+        </div>
+      )}
     </div>
   )}
 </div>
