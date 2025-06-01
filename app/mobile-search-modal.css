@@ -1,0 +1,369 @@
+/* Mobile Search Modal Styles */
+@media screen and (max-width: 768px) {
+  
+  /* Modal Backdrop */
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+  }
+
+  /* Main Modal Container */
+  .mobile-search-modal {
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    background: #d3d3d3;
+    border-radius: 10px;
+    border: 3px solid rgb(250, 250, 250);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin: 0 20px;
+    position: relative;
+  }
+
+  
+
+  /* Modal Header */
+  .modal-header {
+    padding: 20px 24px 20px 24px;
+    background: #d3d3d3;
+    position: relative;
+    border-bottom: none;
+  }
+
+
+
+  /* Modal Content */
+  .modal-content {
+    padding: 0 24px 24px 24px;
+    max-height: calc(90vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-content .space-y-6 > * + * {
+    margin-top: 20px;
+  }
+
+  /* Search Input Container */
+  .modal-content .relative:first-child {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .modal-content input[type="text"] {
+    width: 100%;
+    height: 48px;
+    padding: 12px 48px 12px 16px;
+    border: 2px solid rgba(212, 38, 38, 0.8);
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    color: #000000;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .modal-content input[type="text"]:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+
+  .modal-content input[type="text"]::placeholder {
+    color: #9ca3af;
+    font-size: 16px;
+  }
+
+  /* Search Icon Button */
+  .modal-content .absolute.right-3 {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .modal-content .absolute.right-3 img,
+  .modal-content .absolute.right-3 svg {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    color: #6b7280;
+  }
+
+  /* Filter Sections */
+  .modal-content .space-y-4 > * + * {
+    margin-top: 16px;
+  }
+
+  /* Filter Labels */
+  .modal-content label {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+
+  /* Filter Buttons */
+  .modal-content button.w-full {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .modal-content button.w-full:hover {
+    border-color: #d1d5db;
+    background: #f3f4f6;
+  }
+
+  .modal-content button.w-full.bg-red-50 {
+    border-color: #e5e7eb;
+    background: #f9fafb;
+  }
+
+  /* Filter Button Content */
+  .modal-content button.w-full .flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .modal-content button.w-full .flex img,
+  .modal-content button.w-full .flex svg {
+    width: 20px;
+    height: 20px;
+    color: #374151;
+  }
+
+  .modal-content button.w-full .flex span {
+    color: #374151;
+    font-weight: 400;
+  }
+
+  .modal-content button.w-full .flex-1 {
+    flex: 1;
+    text-align: left;
+  }
+
+  /* Arrow Icons */
+  .modal-content button.w-full > img:last-child,
+  .modal-content button.w-full > svg:last-child {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    transition: transform 0.2s;
+    color: #6b7280;
+  }
+
+  .modal-content button.w-full > img.rotate-180,
+  .modal-content button.w-full > svg.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  /* Location Search Input */
+  .modal-content .bg-red-50 input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #374151;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  .modal-content .bg-red-50 input::placeholder {
+    color: #9ca3af;
+  }
+
+  /* Dropdown Menus */
+  .modal-content .absolute.top-full {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    max-height: 200px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Dropdown Items */
+  .modal-content .absolute.top-full > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 16px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .modal-content .absolute.top-full > div:last-child {
+    border-bottom: none;
+  }
+
+  .modal-content .absolute.top-full > div:hover {
+    background: #f9fafb;
+  }
+
+  .modal-content .absolute.top-full > div.bg-red-50 {
+    background: rgba(220, 38, 38, 0.05);
+    color: #dc2626;
+  }
+
+  .modal-content .absolute.top-full > div.text-red-600 {
+    color: #dc2626;
+    font-weight: 500;
+  }
+
+  .modal-content .absolute.top-full > div.text-gray-500 {
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  .modal-content .absolute.top-full > div img,
+  .modal-content .absolute.top-full > div svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+  }
+
+  /* Search Submit Button */
+  .modal-content button.bg-red-500 {
+    width: 100%;
+    height: 48px;
+    background: white;
+    color: #000;
+    border-radius: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 20px;
+    border: 3px solid rgb(250, 250, 250);
+  }
+
+  .modal-content button.bg-red-500:hover {
+    background: #b91c1c;
+  }
+
+  .modal-content button.bg-red-500:active {
+    transform: translateY(1px);
+  }
+
+  /* Smooth Animations */
+  .mobile-search-modal {
+    animation: slideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .modal-backdrop {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Scrollbar Styling */
+  .modal-content::-webkit-scrollbar,
+  .absolute.top-full::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .modal-content::-webkit-scrollbar-track,
+  .absolute.top-full::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb,
+  .absolute.top-full::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 3px;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb:hover,
+  .absolute.top-full::-webkit-scrollbar-thumb:hover {
+    background: #b1b1b1;
+  }
+
+  /* Safe Area Adjustments for devices with notches */
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .modal-backdrop {
+      padding-top: calc(10vh + env(safe-area-inset-top));
+    }
+  }
+
+  /* Focus States for Accessibility */
+  .modal-content button:focus-visible,
+  .modal-content input:focus-visible {
+    outline: 2px solid #dc2626;
+    outline-offset: 2px;
+  }
+
+  /* Prevent Body Scroll when Modal is Open */
+  body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* Additional spacing adjustments */
+  .modal-content > div:first-child {
+    margin-top: 0;
+  }
+
+  .modal-content > div:last-child {
+    margin-bottom: 0;
+  }
+}

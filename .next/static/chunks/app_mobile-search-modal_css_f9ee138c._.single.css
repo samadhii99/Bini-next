@@ -1,0 +1,334 @@
+/* [project]/app/mobile-search-modal.css [app-client] (css) */
+@media screen and (width <= 768px) {
+  .modal-backdrop {
+    z-index: 9999;
+    background: #00000080;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10vh;
+    display: flex;
+    position: fixed;
+    inset: 0;
+  }
+
+  .mobile-search-modal {
+    background: #d3d3d3;
+    border: 3px solid #fafafa;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px #00000026;
+  }
+
+  .modal-header {
+    background: #d3d3d3;
+    border-bottom: none;
+    padding: 20px 24px;
+    position: relative;
+  }
+
+  .modal-content {
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(90vh - 80px);
+    padding: 0 24px 24px;
+    overflow-y: auto;
+  }
+
+  .modal-content .space-y-6 > * + * {
+    margin-top: 20px;
+  }
+
+  .modal-content .relative:first-child {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .modal-content input[type="text"] {
+    color: #000;
+    background: #fff;
+    border: 2px solid #d42626cc;
+    border-radius: 50px;
+    width: 100%;
+    height: 48px;
+    padding: 12px 48px 12px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+
+  .modal-content input[type="text"]:focus {
+    border-color: #dc2626;
+    outline: none;
+    box-shadow: 0 0 0 3px #dc26261a;
+  }
+
+  .modal-content input[type="text"]::placeholder {
+    color: #9ca3af;
+    font-size: 16px;
+  }
+
+  .modal-content .absolute.right-3 {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+  }
+
+  .modal-content .absolute.right-3 img, .modal-content .absolute.right-3 svg {
+    opacity: .6;
+    color: #6b7280;
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-content .space-y-4 > * + * {
+    margin-top: 16px;
+  }
+
+  .modal-content label {
+    color: #000;
+    margin-bottom: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .modal-content button.w-full {
+    cursor: pointer;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;
+    transition: all .2s;
+    display: flex;
+  }
+
+  .modal-content button.w-full:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+  }
+
+  .modal-content button.w-full.bg-red-50 {
+    background: #f9fafb;
+    border-color: #e5e7eb;
+  }
+
+  .modal-content button.w-full .flex {
+    align-items: center;
+    gap: 12px;
+    display: flex;
+  }
+
+  .modal-content button.w-full .flex img, .modal-content button.w-full .flex svg {
+    color: #374151;
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-content button.w-full .flex span {
+    color: #374151;
+    font-weight: 400;
+  }
+
+  .modal-content button.w-full .flex-1 {
+    text-align: left;
+    flex: 1;
+  }
+
+  .modal-content button.w-full > img:last-child, .modal-content button.w-full > svg:last-child {
+    opacity: .6;
+    color: #6b7280;
+    width: 16px;
+    height: 16px;
+    transition: transform .2s;
+  }
+
+  .modal-content button.w-full > img.rotate-180, .modal-content button.w-full > svg.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .modal-content .bg-red-50 input {
+    color: #374151;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;
+  }
+
+  .modal-content .bg-red-50 input::placeholder {
+    color: #9ca3af;
+  }
+
+  .modal-content .absolute.top-full {
+    z-index: 20;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    max-height: 200px;
+    margin-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px #0000001a;
+  }
+
+  .modal-content .absolute.top-full > div {
+    cursor: pointer;
+    border-bottom: 1px solid #f3f4f6;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;
+    transition: background-color .2s;
+    display: flex;
+  }
+
+  .modal-content .absolute.top-full > div:last-child {
+    border-bottom: none;
+  }
+
+  .modal-content .absolute.top-full > div:hover {
+    background: #f9fafb;
+  }
+
+  .modal-content .absolute.top-full > div.bg-red-50 {
+    color: #dc2626;
+    background: #dc26260d;
+  }
+
+  .modal-content .absolute.top-full > div.text-red-600 {
+    color: #dc2626;
+    font-weight: 500;
+  }
+
+  .modal-content .absolute.top-full > div.text-gray-500 {
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  .modal-content .absolute.top-full > div img, .modal-content .absolute.top-full > div svg {
+    opacity: .7;
+    width: 16px;
+    height: 16px;
+  }
+
+  .modal-content button.bg-red-500 {
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    border: 3px solid #fafafa;
+    border-radius: 10px;
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color .2s, transform .1s;
+  }
+
+  .modal-content button.bg-red-500:hover {
+    background: #b91c1c;
+  }
+
+  .modal-content button.bg-red-500:active {
+    transform: translateY(1px);
+  }
+
+  .mobile-search-modal {
+    animation: .3s cubic-bezier(.25, .46, .45, .94) slideUp;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal-backdrop {
+    animation: .3s ease-out fadeIn;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .modal-content::-webkit-scrollbar, .absolute.top-full::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .modal-content::-webkit-scrollbar-track, .absolute.top-full::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb, .absolute.top-full::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 3px;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb:hover, .absolute.top-full::-webkit-scrollbar-thumb:hover {
+    background: #b1b1b1;
+  }
+
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .modal-backdrop {
+      padding-top: calc(10vh + env(safe-area-inset-top));
+    }
+  }
+
+  .modal-content button:focus-visible, .modal-content input:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid #dc2626;
+  }
+
+  body.modal-open {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .modal-content > div:first-child {
+    margin-top: 0;
+  }
+
+  .modal-content > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=app_mobile-search-modal_css_f9ee138c._.single.css.map*/

@@ -1,0 +1,439 @@
+/* mobile.css - Mobile-specific styles for BINI's App */
+
+/* Mobile Media Query - Apply styles for screens 768px and below */
+@media screen and (max-width: 768px) {
+  
+  /* Reset mobile-specific styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "SF Pro Display", "Roboto Serif", sans-serif;
+    overflow-x: hidden;
+    background-color: rgba(255, 245, 218, 1);
+  }
+
+  /* Header Mobile Styles */
+  .fixed-header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  .page-container {
+    height: 7vh; /* Remove the 7vh space for mobile */
+  }
+
+  header {
+    background: rgba(212, 38, 38, 1);
+    padding: 12px 20px;
+    position: relative;
+  }
+
+  .max-w-7xl {
+    max-width: 100%;
+
+    margin: 0;
+  }
+
+  .mx-2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Header content layout for mobile */
+  header .flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .custom-title {
+    font-family: 'Roboto Serif', serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    color: white;
+  }
+
+  /* Hide language selector and signup button on mobile */
+  .language-selector,
+  .signup-button {
+    display: none;
+  }
+
+  /* Mobile login button */
+  .login-button {
+    width: 80px;
+    height: 36px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 18px;
+    background: rgba(243, 141, 98, 1);
+    border: none;
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Hide profile avatar on mobile */
+  .profile-avatar {
+    display: contents;
+  }
+
+  /* Main content mobile adjustments */
+  main {
+    max-width: 100%;
+    padding: 20px 20px 0 20px;
+    margin-top: 60px; /* Account for fixed header */
+  }
+
+  /* Hero section mobile */
+  .hero-title {
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    width: 100%;
+    height: auto;
+    background: rgba(47, 23, 40, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: normal;
+    word-wrap: break-word;
+    margin-top: 180px;
+  }
+
+  /* Keep shop image visible on mobile - adjust size for mobile */
+  .flex.justify-center.items-center.mb-14 {
+    margin-bottom: 30px;
+  }
+
+  .shop-image {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+  }
+
+  .mb-13 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  .mb-14 {
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile search container */
+  .search-container {
+    width: 100%;
+    height: 50px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 3px solid rgba(212, 38, 38, 0.8);
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #666;
+    background: transparent;
+    padding-right: 50px; /* Make space for the search button */
+  }
+
+  .search-container input::placeholder {
+    color: #999;
+    font-size: 16px;
+  }
+
+  /* Fixed search button positioning */
+  .custom-button-size {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .custom-button-size img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Hide filter options on mobile */
+  .filter-button,
+  .flex.justify-center.space-x-8 {
+    display: none;
+  }
+
+  /* Mobile quick links */
+  .mt-6 {
+    margin-top: 20px;
+  }
+
+  .try-this-label {
+    width: 62px;
+    height: 21px;
+    display: inline-block;
+    color: rgba(0, 0, 0, 1);
+    margin-right: 10px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    white-space: nowrap;  
+    margin-top: 3px;
+  }
+
+  .quick-link-button {
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 10px;
+    gap: 10px;
+    border-radius: 9px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    transition: color 0.3s;
+  }
+
+  .quick-link-button:hover {
+    color: red;
+  }
+
+  .custom-see-more-button {
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 9px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Mobile flex container for quick links - keep them in one row and centered */
+  .flex.justify-center.items-center.space-x-3 {
+    flex-wrap: nowrap; /* Don't wrap to new line */
+    justify-content: center; /* Center the items */
+    align-items: center;
+    gap: 4px; /* Smaller gap for mobile */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding: 0 10px; /* Add padding to prevent cutoff */
+    margin: 0 auto; /* Center the container */
+  }
+
+  .flex.justify-center.items-center.space-x-3 > * + * {
+    margin-left: 0;
+  }
+
+  /* Shop by Category mobile */
+  .mt-22 {
+    margin-top: 40px;
+  }
+
+  .shop-by-category-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000;
+  }
+
+  /* Mobile category container */
+  .custom-category-container {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 30px;
+    background: rgba(243, 141, 98, 0.8);
+    margin: 0;
+  }
+
+  /* Mobile category grid - 2 columns instead of 4 */
+  .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+
+  /* Mobile category items */
+  .grid.grid-cols-4 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Category images mobile sizing - FIXED */
+  .grid.grid-cols-4 img {
+    width: 180px !important; /* Fixed size for mobile */
+    height: 180px !important; /* Fixed size for mobile */
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+  }
+
+  /* Override any conflicting image styles */
+  .w-200 {
+    width: 100px !important;
+  }
+  
+  .h-200 {
+    height: 100px !important;
+  }
+
+  /* Add category labels for mobile */
+  .category-label {
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 8px;
+  }
+
+  /* Mobile utility overrides */
+  .px-6 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .py-4 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .py-12 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .mb-10 {
+    margin-bottom: 20px;
+  }
+
+  .space-x-4 > * + * {
+    margin-left: 8px;
+  }
+
+  .space-x-8 > * + * {
+    margin-left: 12px;
+  }
+
+  /* Hide elements that shouldn't appear on mobile */
+  .language-dropdown,
+  .filter-button,
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  /* Mobile-specific responsive text sizing */
+  .text-sm {
+    font-size: 14px;
+  }
+
+  .text-lg {
+    font-size: 18px;
+  }
+
+  .text-2xl {
+    font-size: 20px;
+  }
+
+  .text-3xl {
+    font-size: 24px;
+  }
+
+  /* Ensure mobile viewport doesn't zoom */
+  input[type="text"] {
+    font-size: 16px !important;
+  }
+
+  /* Mobile scrolling improvements */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile tap highlighting */
+  button, .cursor-pointer {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Mobile safe area adjustments for devices with notches */
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .fixed-header-container {
+      padding-top: env(safe-area-inset-top);
+    }
+    
+    main {
+      margin-top: calc(60px + env(safe-area-inset-top));
+    }
+  }
+}
+
+/* Tablet adjustments (768px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+  
+  .search-container {
+    width: 100%;
+    margin: 0 auto 20px auto;
+  }
+  
+  .grid.grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Center quick links on tablet */
+  .flex.justify-center.items-center.space-x-3 {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+}

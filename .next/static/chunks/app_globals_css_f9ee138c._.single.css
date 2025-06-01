@@ -179,8 +179,8 @@ header {
   border: none;
   border-radius: 4px;
   outline: none;
-  width: auto;
-  max-width: 120px;
+  width: 400px;
+  max-width: 1200px;
   padding: 2px 4px;
   font-family: SF Pro Display, sans-serif;
   font-size: 20px;
@@ -1721,36 +1721,78 @@ img {
 @media (width <= 1439px) {
   .filter-button.active .search-input {
     max-width: 110px;
-    font-size: 12px;
+    font-size: 19px;
   }
 
   .filter-button.active {
     height: 32px;
     padding: 4px 9px;
   }
+
+  .filter-button.active .search-input::placeholder {
+    font-size: 19px;
+  }
+
+  .dropdown-menu div {
+    padding: 9px 15px;
+    font-size: 15px;
+  }
+
+  .dropdown-menu div img {
+    width: 17px;
+    height: 17px;
+  }
 }
 
 @media (width <= 1279px) {
   .filter-button.active .search-input {
     max-width: 100px;
-    font-size: 10px;
+    font-size: 18px;
   }
 
   .filter-button.active {
     height: 30px;
     padding: 3px 8px;
   }
+
+  .filter-button.active .search-input::placeholder {
+    font-size: 18px;
+  }
+
+  .dropdown-menu div {
+    padding: 9px 14px;
+    font-size: 15px;
+  }
+
+  .dropdown-menu div img {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 @media (width <= 1023px) {
   .filter-button.active .search-input {
     max-width: 90px;
-    font-size: 8px;
+    font-size: 17px;
   }
 
   .filter-button.active {
     height: 28px;
     padding: 3px 7px;
+  }
+
+  .filter-button.active .search-input::placeholder {
+    font-size: 17px;
+  }
+
+  .dropdown-menu div {
+    padding: 8px 13px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu div img {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -1764,6 +1806,20 @@ img {
     gap: 6px;
     height: 26px;
     padding: 2px 6px;
+  }
+
+  .filter-button.active .search-input::placeholder {
+    font-size: 16px;
+  }
+
+  .dropdown-menu div {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu div img {
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -1781,8 +1837,17 @@ img {
   }
 
   .filter-button.active .search-input::placeholder {
-    opacity: .6;
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu div {
+    padding: 7px 11px;
+    font-size: 13px;
+  }
+
+  .dropdown-menu div img {
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -1800,8 +1865,17 @@ img {
   }
 
   .filter-button.active .search-input::placeholder {
-    opacity: .5;
-    font-size: 11px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu div {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .dropdown-menu div img {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -1818,8 +1892,17 @@ img {
   }
 
   .filter-button.active .search-input::placeholder {
-    opacity: .4;
-    font-size: 10px;
+    font-size: 12px;
+  }
+
+  .dropdown-menu div {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .dropdown-menu div img {
+    width: 10px;
+    height: 10px;
   }
 }
 
